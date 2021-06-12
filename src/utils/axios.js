@@ -1,16 +1,25 @@
 import axios from 'axios'
+// import _ from 'lodash'
 import config from '../config'
 
 const instance = axios.create({
   baseURL: config.hahow_baseURL,
-  timeout: config.api_timeout, // default 3000ms
+  timeout: config.api_timeout, // default 10000ms
 })
 
 const successHandler = (resp) => {
-  console.log(resp)
+  console.log('resp', resp)
   return resp
 }
 const errorHandler = (error) => {
+  console.log('error', error.response)
+  // const status = _.get(error, 'response.status')
+  // console.log('status', status)
+
+  // if (!status) {
+  //   return Promise.reject(error)
+  // }
+
   switch (error.response.status) {
     case 404:
       console.log(404)

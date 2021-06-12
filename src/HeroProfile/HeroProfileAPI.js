@@ -1,4 +1,4 @@
-import { get, patch } from '../utils/axiosService'
+import { get, patch } from '../utils/axios'
 
 const getHeroProfile = async (id) => {
   const res = await get(`/heroes/${id}/profile`)
