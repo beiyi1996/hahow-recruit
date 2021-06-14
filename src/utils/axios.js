@@ -1,33 +1,37 @@
 import axios from 'axios'
-// import _ from 'lodash'
+import _ from 'lodash'
 import config from '../config'
+import history from '../history'
 
 const instance = axios.create({
   baseURL: config.hahow_baseURL,
   timeout: config.api_timeout, // default 10000ms
+  headers: {
+    'Content-Type': 'application/json',
+  },
 })
 
 const successHandler = (resp) => {
-  console.log('resp', resp)
   return resp
 }
 const errorHandler = (error) => {
   console.log('error', error.response)
-  // const status = _.get(error, 'response.status')
-  // console.log('status', status)
+  const status = _.get(error, 'response.status')
+  console.log('status', status)
 
-  // if (!status) {
-  //   return Promise.reject(error)
-  // }
+  if (!status) {
+    return Promise.reject(error)
+  }
 
   switch (error.response.status) {
     case 404:
-      console.log(404)
+      history.push('/404')
       break
     default:
-      console.log(500)
+      history.push('/500')
       break
   }
+
   return Promise.reject(error)
 }
 
