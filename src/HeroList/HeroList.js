@@ -14,7 +14,6 @@ export default function HeroList() {
   const [heroList, setHeroList] = useState([])
 
   useEffect(() => {
-    console.log('componentDidMount...')
     async function getHeroList() {
       const res = await getHeros()
       setHeroList(res.data)

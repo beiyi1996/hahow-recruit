@@ -1,16 +1,19 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import styled from 'styled-components'
-import Paper from '@material-ui/core/Paper'
+import backgroundColor from '../theme'
+import Grid from '@material-ui/core/Grid'
 
-const Card = styled(Paper)`
+const StyledGrid = styled(Grid)`
   width: calc(100% / 2 - 20px);
   margin: 10px;
-  padding: 0 25px 25px;
+  padding: 25px 25px 0;
   border: 1px solid;
-  border-color: ${(props) => props.borderColor};
+  border-radius: 8px;
+  border-color: ${(props) => (props.focus === 'true' ? backgroundColor : 'black')};
   & > a > img {
     width: 100%;
+    border-radius: 8px;
   }
   @media screen and (min-width: 680px) {
     width: calc(100% / 4 - 30px);
@@ -26,12 +29,14 @@ const HeroLink = styled(Link)`
 `
 
 export default function HeroCard({ value }) {
+  const { heroId } = useParams()
+
   return (
-    <Card bordercolor={'red'}>
+    <StyledGrid variant="primary" focus={heroId === value.id ? 'true' : 'false'}>
       <HeroLink to={`/heroes/${value.id}`} replace>
-        <h3>{value.name}</h3>
         <img src={value.image} alt={value.name} />
+        <h3>{value.name}</h3>
       </HeroLink>
-    </Card>
+    </StyledGrid>
   )
 }

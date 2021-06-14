@@ -1,8 +1,12 @@
 import { get } from '../utils/axios'
 
 const getHeros = async () => {
-  const res = await get('/heroes')
-  return res
+  try {
+    const res = await get('/heroes')
+    return res
+  } catch (err) {
+    return { code: 400, message: 'Oops... 出了點問題。' }
+  }
 }
 
 export { getHeros }
