@@ -30,7 +30,12 @@ export default function SimpleAlerts() {
 
   return (
     <StyledDiv>
-      <Snackbar open={open} autoHideDuration={1000} onClose={handleClose}>
+      <Snackbar
+        open={open}
+        autoHideDuration={1000}
+        anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+        onClose={handleClose}
+      >
         <Alert severity={APIError.code === 200 ? 'success' : 'error'} onClose={handleClose}>
           {APIError.message}
         </Alert>
