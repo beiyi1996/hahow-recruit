@@ -10,7 +10,7 @@
   background-repeat: no-repeat;
 }
 
-@media screen and (min-width: 450px) and (max-width: 680px) {
+@media screen and (min-width: 450px) and (max-width: 679px) {
   .App {
     height: auto;
   }

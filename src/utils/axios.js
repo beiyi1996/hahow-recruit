@@ -5,7 +5,7 @@ import history from '../history'
 
 const instance = axios.create({
   baseURL: config.hahow_baseURL,
-  timeout: config.api_timeout, // default 10000ms
+  timeout: config.api_timeout, // default 5000ms
   headers: {
     'Content-Type': 'application/json',
   },
@@ -15,9 +15,7 @@ const successHandler = (resp) => {
   return resp
 }
 const errorHandler = (error) => {
-  console.log('error', error.response)
   const status = _.get(error, 'response.status')
-  console.log('status', status)
 
   if (!status) {
     return Promise.reject(error)
