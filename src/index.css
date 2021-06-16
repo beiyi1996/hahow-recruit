@@ -16,5 +16,5 @@ code {
 
 @font-face {
   font-family: 'MarvelFont';
-  src: URL('./MarvelRegular-Dj83.ttf') format('truetype');
+  src: URL('./fonts/MarvelRegular-Dj83.ttf') format('truetype');
 }

@@ -1,5 +1,6 @@
 import React, { useReducer } from 'react'
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
+import { Helmet } from 'react-helmet'
 import { ThemeProvider } from 'styled-components'
 import HeroList from './HeroList'
 import HeroProfile from './HeroProfile'
@@ -19,9 +20,15 @@ function App() {
             <Switch>
               <Redirect exact from="/" to="/heroes" />
               <Route path="/heroes" exact>
+                <Helmet>
+                  <title>Hero List Page</title>
+                </Helmet>
                 <HeroList />
               </Route>
               <Route path="/heroes/:heroId">
+                <Helmet>
+                  <title>Hero Profile Page</title>
+                </Helmet>
                 <HeroList />
                 <HeroProfile />
               </Route>
