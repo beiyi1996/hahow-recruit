@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/hahow-recruit/static/css/main.520092e3.chunk.css",
-    "main.js": "/hahow-recruit/static/js/main.b6da057c.chunk.js",
-    "main.js.map": "/hahow-recruit/static/js/main.b6da057c.chunk.js.map",
+    "main.js": "/hahow-recruit/static/js/main.4d984530.chunk.js",
+    "main.js.map": "/hahow-recruit/static/js/main.4d984530.chunk.js.map",
     "runtime-main.js": "/hahow-recruit/static/js/runtime-main.fa06ae59.js",
     "runtime-main.js.map": "/hahow-recruit/static/js/runtime-main.fa06ae59.js.map",
-    "static/js/2.a3408ccf.chunk.js": "/hahow-recruit/static/js/2.a3408ccf.chunk.js",
-    "static/js/2.a3408ccf.chunk.js.map": "/hahow-recruit/static/js/2.a3408ccf.chunk.js.map",
+    "static/js/2.a40d1417.chunk.js": "/hahow-recruit/static/js/2.a40d1417.chunk.js",
+    "static/js/2.a40d1417.chunk.js.map": "/hahow-recruit/static/js/2.a40d1417.chunk.js.map",
     "index.html": "/hahow-recruit/index.html",
     "static/css/main.520092e3.chunk.css.map": "/hahow-recruit/static/css/main.520092e3.chunk.css.map",
-    "static/js/2.a3408ccf.chunk.js.LICENSE.txt": "/hahow-recruit/static/js/2.a3408ccf.chunk.js.LICENSE.txt",
+    "static/js/2.a40d1417.chunk.js.LICENSE.txt": "/hahow-recruit/static/js/2.a40d1417.chunk.js.LICENSE.txt",
     "static/media/404.68029782.svg": "/hahow-recruit/static/media/404.68029782.svg",
     "static/media/500.8e06cf21.svg": "/hahow-recruit/static/media/500.8e06cf21.svg",
     "static/media/index.css": "/hahow-recruit/static/media/MarvelRegular-Dj83.329acb51.ttf"
   },
   "entrypoints": [
     "static/js/runtime-main.fa06ae59.js",
-    "static/js/2.a3408ccf.chunk.js",
+    "static/js/2.a40d1417.chunk.js",
     "static/css/main.520092e3.chunk.css",
-    "static/js/main.b6da057c.chunk.js"
+    "static/js/main.4d984530.chunk.js"
   ]
 }
