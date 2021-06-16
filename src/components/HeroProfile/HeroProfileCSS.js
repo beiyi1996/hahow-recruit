@@ -5,6 +5,7 @@ import backgroundColor from '../../theme'
 
 const StyledGrid = styled(Grid)`
   width: 100%;
+  position: relative;
   div& {
     margin: 20px auto;
     padding: 30px;

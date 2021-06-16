@@ -9,6 +9,7 @@ import IntIcon from '@material-ui/icons/EmojiObjectsRounded'
 import StrIcon from '@material-ui/icons/FitnessCenterRounded'
 import { getHeroProfile, patchHeroProfile } from './HeroProfileAPI'
 import ErrorAlert from '../ErrorAlert'
+import Loading from '../Loading'
 import { ContextStore } from '../../store/contextStore'
 import {
   StyledGrid,
@@ -28,14 +29,15 @@ export default function HeroProfile() {
   const [restPoint, setRestPoint] = useState(0)
   const [skillKeys, setSkillKeys] = useState([])
   const [changeAbility, setChangeAbility] = useState(false)
+  const [openLoading, setOpenLoading] = useState(false)
   const [disabledIncrease, setDisabledIncrease] = useState({ str: true, int: true, agi: true, luk: true })
   const [disabledDecrease, setDisabledDecrease] = useState({ str: false, int: false, agi: false, luk: false })
   const { APIError, APIErrorDispatch } = useContext(ContextStore)
   const icons = [StrIcon, IntIcon, AgiIcon, LukIcon]
 
   useEffect(() => {
+    setOpenLoading(true)
     setRestPoint(0)
-    console.log('hero id effect...')
 
     async function getHeroProfileInfo() {
       const res = await getHeroProfile(heroId)
@@ -45,6 +47,7 @@ export default function HeroProfile() {
       setProfile(res.data)
       setSkillKeys(skillKeys)
       setAbilitySum(abilitySum)
+      setOpenLoading(false)
     }
 
     getHeroProfileInfo()
@@ -118,6 +121,8 @@ export default function HeroProfile() {
   return (
     <Container maxWidth="lg">
       <StyledGrid item>
+        <Loading open={openLoading} position={true} />
+
         <StyledBox>
           {skillKeys.map((key, idx) => {
             const Icon = icons[idx]

@@ -21,7 +21,8 @@ const StyledGrid = styled(Grid)`
       props.variant === 'primary'
         ? 'linear-gradient( 0deg,#2f2f2f 0%,#0000008c 100%)'
         : 'linear-gradient(120deg,#9e9797cc 0%,#c14343 100%)'};
-    &::before {
+
+    & > a > div::before {
       opacity: 0;
       transition: opacity 0.5s ease-in-out;
     }
@@ -60,8 +61,9 @@ const ImageDiv = styled.div`
     content: '';
     width: 100%;
     height: 100%;
-    opacity: 1;
+    opacity: ${(props) => (props.variant === 'primary' ? 0 : 1)};
     position: absolute;
+    z-index: 1;
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
   }
 
