@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-d
 import { Helmet } from 'react-helmet'
 import { ThemeProvider } from 'styled-components'
 import HeroList from './HeroList'
-import HeroProfile from './HeroProfile'
-import NotFound from './NotFound'
-import SystemError from './SystemError'
+import HeroProfile from './components/HeroProfile'
+import NotFound from './components/NotFound'
+import SystemError from './components/SystemError'
 import { APIErrorInitState, APIErrorReducer, ContextStore } from './store/contextStore'
 import './App.css'
 

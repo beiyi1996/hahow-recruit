@@ -2,7 +2,7 @@ import React, { useEffect, useContext, useState } from 'react'
 import styled from 'styled-components'
 import Alert from '@material-ui/lab/Alert'
 import Snackbar from '@material-ui/core/Snackbar'
-import { ContextStore } from '../store/contextStore'
+import { ContextStore } from '../../store/contextStore'
 
 const StyledDiv = styled.div`
   width: auto;

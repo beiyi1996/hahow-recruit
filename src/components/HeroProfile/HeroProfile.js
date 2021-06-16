@@ -7,13 +7,13 @@ import Grid from '@material-ui/core/Grid'
 import AddRoundedIcon from '@material-ui/icons/AddRounded'
 import RemoveRoundedIcon from '@material-ui/icons/RemoveRounded'
 import { getHeroProfile, patchHeroProfile } from './HeroProfileAPI'
-import backgroundColor from '../theme'
+import backgroundColor from '../../theme'
 import ErrorAlert from '../ErrorAlert'
 import LukIcon from '@material-ui/icons/StarsRounded'
 import AgiIcon from '@material-ui/icons/FlashOnRounded'
 import IntIcon from '@material-ui/icons/EmojiObjectsRounded'
 import StrIcon from '@material-ui/icons/FitnessCenterRounded'
-import { ContextStore } from '../store/contextStore'
+import { ContextStore } from '../../store/contextStore'
 
 const StyledGrid = styled(Grid)`
   width: 100%;
