@@ -4,14 +4,8 @@
   justify-content: center;
   flex-direction: column;
   margin: 0 auto;
-  height: 100vh;
+  min-height: 100vh;
   background-image: url('https://raw.githubusercontent.com/KingLee/awesome/master/marvel-bg.jpg');
   background-size: 100% 100%;
   background-repeat: no-repeat;
-}
-
-@media screen and (min-width: 450px) and (max-width: 679px) {
-  .App {
-    height: auto;
-  }
 }
