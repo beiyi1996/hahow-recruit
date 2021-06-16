@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/hahow-recruit/static/css/main.520092e3.chunk.css",
-    "main.js": "/hahow-recruit/static/js/main.4d984530.chunk.js",
-    "main.js.map": "/hahow-recruit/static/js/main.4d984530.chunk.js.map",
+    "main.js": "/hahow-recruit/static/js/main.51fc4a13.chunk.js",
+    "main.js.map": "/hahow-recruit/static/js/main.51fc4a13.chunk.js.map",
     "runtime-main.js": "/hahow-recruit/static/js/runtime-main.fa06ae59.js",
     "runtime-main.js.map": "/hahow-recruit/static/js/runtime-main.fa06ae59.js.map",
     "static/js/2.a40d1417.chunk.js": "/hahow-recruit/static/js/2.a40d1417.chunk.js",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.fa06ae59.js",
     "static/js/2.a40d1417.chunk.js",
     "static/css/main.520092e3.chunk.css",
-    "static/js/main.4d984530.chunk.js"
+    "static/js/main.51fc4a13.chunk.js"
   ]
 }
