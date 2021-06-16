@@ -1,25 +1,33 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import Container from '@material-ui/core/Container'
 import HeroCard from '../HeroCard'
 import Loading from '../Loading'
 import { StyledGrid } from './HeroListCSS'
 import { getHeros } from './HeroListAPI'
+import { ContextStore } from '../../store/contextStore'
 
 export default function HeroList() {
   const [openLoading, setOpenLoading] = useState(false)
   const [heroList, setHeroList] = useState([])
+  const { APIErrorDispatch } = useContext(ContextStore)
 
   useEffect(() => {
     setOpenLoading(true)
 
     async function getHeroList() {
       const res = await getHeros()
+
+      if (res.status !== 200) {
+        APIErrorDispatch({ type: 'SET_ERROR', payload: res.data })
+        return
+      }
+
       setHeroList(res.data)
       setOpenLoading(false)
     }
 
     getHeroList()
-  }, [])
+  }, [APIErrorDispatch])
 
   return (
     <Container maxWidth="lg">

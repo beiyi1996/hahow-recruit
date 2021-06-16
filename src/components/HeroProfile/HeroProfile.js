@@ -43,6 +43,11 @@ export default function HeroProfile() {
       const skillKeys = Object.keys(res.data)
       const abilitySum = Object.values(res.data).reduce((acc, curr) => acc + curr)
 
+      if (res.status !== 200) {
+        APIErrorDispatch({ type: 'SET_ERROR', payload: res.data })
+        return
+      }
+
       setProfile(res.data)
       setSkillKeys(skillKeys)
       setAbilitySum(abilitySum)
@@ -50,7 +55,7 @@ export default function HeroProfile() {
     }
 
     getHeroProfileInfo()
-  }, [heroId])
+  }, [APIErrorDispatch, heroId])
 
   useEffect(() => {
     const cloneProfile = { ...profile }
@@ -87,7 +92,7 @@ export default function HeroProfile() {
 
   const handlePatchHeroProfile = async () => {
     if (restPoint > 0) {
-      APIErrorDispatch({ type: 'SET_ERROR', payload: { code: 400, message: '能力點數未設置完全。' } })
+      APIErrorDispatch({ type: 'SET_ERROR', payload: { code: 400, message: '能力點數未設置完成。' } })
       return
     }
 

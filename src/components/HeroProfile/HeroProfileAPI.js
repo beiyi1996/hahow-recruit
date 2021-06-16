@@ -11,9 +11,9 @@ const patchHeroProfile = async (id, data) => {
     return res
   } catch (err) {
     if (err?.response.status === 404) {
-      return { code: 404, message: '你的能力點數尚未設定完畢。' }
+      return { code: 404, message: 'Oops... 出了點問題。' }
     }
-    return { code: 400, message: 'Oops... 出了點問題。' }
+    return { code: 400, message: '能力點數未設置完成。' }
   }
 }
 
