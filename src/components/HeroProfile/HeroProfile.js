@@ -28,7 +28,6 @@ export default function HeroProfile() {
   const [abilitySum, setAbilitySum] = useState(0)
   const [restPoint, setRestPoint] = useState(0)
   const [skillKeys, setSkillKeys] = useState([])
-  const [changeAbility, setChangeAbility] = useState(false)
   const [openLoading, setOpenLoading] = useState(false)
   const [disabledIncrease, setDisabledIncrease] = useState({ str: true, int: true, agi: true, luk: true })
   const [disabledDecrease, setDisabledDecrease] = useState({ str: false, int: false, agi: false, luk: false })
@@ -64,31 +63,14 @@ export default function HeroProfile() {
     })
 
     setDisabledDecrease(cloneProfile)
-  }, [profile])
 
-  useEffect(() => {
-    // 當能力值為 0 時, 需把 減少能力值的按鈕 disabled
-    // 當目前的能力值總和 = abilitySum 時, 需把 增加能力值的按鈕 disabled
-    if (changeAbility) {
-      const cloneProfile = { ...profile }
-      Object.keys(profile).forEach((key) => {
-        if (profile[key] === 0) {
-          cloneProfile[key] = true
-        } else {
-          cloneProfile[key] = false
-        }
-      })
-      setDisabledDecrease(cloneProfile)
-
-      const currAbilitySum = Object.values(profile).reduce((acc, curr) => acc + curr)
-      if (currAbilitySum === abilitySum) {
-        setDisabledIncrease({ str: true, int: true, agi: true, luk: true })
-      }
+    const currAbilitySum = Object.values(profile).reduce((acc, curr) => acc + curr)
+    if (currAbilitySum === abilitySum) {
+      setDisabledIncrease({ str: true, int: true, agi: true, luk: true })
     }
-  }, [profile, changeAbility, abilitySum])
+  }, [profile, abilitySum])
 
   const handleChangePower = (key, actionType) => {
-    setChangeAbility(true)
     if (actionType === 'increase') {
       setProfile({ ...profile, [key]: profile[key] + 1 })
       setRestPoint(restPoint - 1)
@@ -121,7 +103,7 @@ export default function HeroProfile() {
   return (
     <Container maxWidth="lg">
       <StyledGrid item>
-        <Loading open={openLoading} position={true} />
+        <Loading open={openLoading} absolute="true" />
 
         <StyledBox>
           {skillKeys.map((key, idx) => {

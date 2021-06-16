@@ -6,11 +6,11 @@ Hahow-recruit 為 Hahow 前端工程師面試題目。
 
 ## 執行專案
 
-環境依賴 : `node : v12.16.2+`
+環境 : `node : v12.16.2+`
 
 
 
-下載專案後, 到資料夾目錄執行以下步驟 :
+Clone 專案後, 到資料夾目錄執行以下步驟 :
 
 1. `yarn`  安裝 node_modules。 
 
@@ -43,54 +43,63 @@ Hahow-recruit 為 Hahow 前端工程師面試題目。
 
 1. 專案架構
 
-   以功能或路徑分類, 資料夾中包含該組建的 CSS,  JavaScript 和 API 。
-
 ```markdown
-├── README.md                   // help
-├── build                       // 可部署的靜態檔案
-├── package.json                // 套件的版本控制
-├── public                      // web靜態資源載入
-├── src                         // source code
+├── README.md                    // help
+├── build                        // 可部署的靜態檔案
+├── package.json                 // 套件的版本控制
+├── public                       // web靜態資源載入
+├── src                          // source code
 │   ├── App.css
-│   ├── App.js                  
+│   ├── App.js
 │   ├── App.test.js
-│   ├── ErrorAlert
-│   ├── HeroCard
-│   ├── HeroList
-│   ├── HeroProfile
-│   ├── NotFound
-│   ├── SystemError
+│   ├── components               // hooks 組建
+│   │		└── {function}           // hooks function folder
 │   ├── config.js                // 專案設定檔案
 │   ├── fonts                    // 字型檔
 │   ├── history.js               // 提供 component 以外的 js 取得 History
 │   ├── images                   // 圖片檔
 │   ├── index.css
 │   ├── index.js                 // JavaScript entry point
-│   ├── reportWebVitals.js
 │   ├── setupTests.js
 │   ├── store                    // Context store
 │   ├── theme.js                 // styled component theme
-│   └── utils
+│   └── utils                    // 工具包
 ├── .env                         // 設定環境變數
 ├── .gitignore                   // git的忽略檔案
+├── .prettierrc                  // 樣式設定
 └── yarn.lock
 ```
 
 
 
-2. Web 架構邏輯
+2. Web 架構邏輯 (src 資料夾)
 
-   - Component : 
+   Components : 以功能或路徑分類, 資料夾中包含該元件的 CSS,  JavaScript 和 API
 
-     
+   Utils : `axios.js` 包裝 Axios Request method
 
-   - API :
+   
 
-     - 
+## 第三方套件
 
-     
+1. [Material-UI](https://material-ui.com/) : React hooks UI, 讓刻板更方便快速。 
+   - 可以安裝 [@material-ui/icons](https://yarnpkg.com/package/@material-ui/icons) 使用他提供的 svg icon
+   - [@material-ui/lab](https://yarnpkg.com/package/@material-ui/lab) : Material-UI 正在開發中的 component, 依照 Google Analytics 分析的熱門度依序加入 Core 中
+2. [Axios](https://yarnpkg.com/package/axios) : 是一個基於 promise 的 HTTP 庫，簡單的講就是可以發送get、post請求
+3. [Lodash](https://lodash.com/) :  讓你更簡單的操作 JavaScript 的 array、number、objects、string
+4. [react-helme](https://yarnpkg.com/package/react-helmet) : 設定 document head
 
-     
+5. [react-router-dom](https://reactrouter.com/web/guides/quick-start) : React 路由控制
+6. [styled-components](https://styled-components.com/docs/basics#getting-started) : 是一個 CSS-In-JS 的函式庫, 可以接收 props 來改變 css 樣式
+   - [styled-theming](https://jamie.build/styled-theming.html) : 自定義 styled-components 的主題
+
+
+
+## 寫註解的原則
+
+我通常會在比較複雜的邏輯或是設定檔寫上註解, 或是
+
+
 
 - 我們該如何執行完成的 package
 - 專案的架構、Web 的架構邏輯
