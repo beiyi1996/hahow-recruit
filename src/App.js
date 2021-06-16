@@ -2,7 +2,7 @@ import React, { useReducer } from 'react'
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
 import { ThemeProvider } from 'styled-components'
-import HeroList from './HeroList'
+import HeroList from './components/HeroList'
 import HeroProfile from './components/HeroProfile'
 import NotFound from './components/NotFound'
 import SystemError from './components/SystemError'
@@ -38,6 +38,7 @@ function App() {
               <Route path="/500">
                 <SystemError />
               </Route>
+              <Redirect to="/404" />
             </Switch>
           </div>
         </ContextStore.Provider>

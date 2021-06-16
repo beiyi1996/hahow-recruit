@@ -1,18 +1,8 @@
 import React, { useEffect, useContext, useState } from 'react'
-import styled from 'styled-components'
 import Alert from '@material-ui/lab/Alert'
 import Snackbar from '@material-ui/core/Snackbar'
 import { ContextStore } from '../../store/contextStore'
-
-const StyledDiv = styled.div`
-  width: auto;
-  position: fixed;
-  top: 30px;
-  right: 30px;
-  & > * + * {
-    margin-top: 16px;
-  }
-`
+import { StyledDiv } from './ErrorAlertCSS'
 
 export default function SimpleAlerts() {
   const { APIError } = useContext(ContextStore)

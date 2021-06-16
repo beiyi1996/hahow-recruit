@@ -23,10 +23,12 @@ const errorHandler = (error) => {
 
   switch (error.response.status) {
     case 404:
-      history.push('/404')
+      history.replace('/404')
+      history.go(0)
       break
     default:
-      history.push('/500')
+      history.replace('/500')
+      history.go(0)
       break
   }
 

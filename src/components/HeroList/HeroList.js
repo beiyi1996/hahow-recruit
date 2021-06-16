@@ -1,14 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import styled from 'styled-components'
 import Container from '@material-ui/core/Container'
-import Grid from '@material-ui/core/Grid'
 import HeroCard from '../HeroCard'
+import { StyledGrid } from './HeroListCSS'
 import { getHeros } from './HeroListAPI'
-
-const StyledGrid = styled(Grid)`
-  flex-grow: 1;
-  padding: 30px 0;
-`
 
 export default function HeroList() {
   const [heroList, setHeroList] = useState([])

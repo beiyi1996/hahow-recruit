@@ -1,4 +1,4 @@
-import { get } from '../utils/axios'
+import { get } from '../../utils/axios'
 
 const getHeros = async () => {
   try {
