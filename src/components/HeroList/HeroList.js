@@ -18,7 +18,7 @@ export default function HeroList() {
       const res = await getHeros()
 
       if (res.status !== 200) {
-        APIErrorDispatch({ type: 'SET_ERROR', payload: res.data })
+        APIErrorDispatch({ type: 'SET_ERROR', payload: { code: res.status, message: res.data } })
         return
       }
 

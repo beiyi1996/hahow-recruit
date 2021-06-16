@@ -44,7 +44,7 @@ export default function HeroProfile() {
       const abilitySum = Object.values(res.data).reduce((acc, curr) => acc + curr)
 
       if (res.status !== 200) {
-        APIErrorDispatch({ type: 'SET_ERROR', payload: res.data })
+        APIErrorDispatch({ type: 'SET_ERROR', payload: { code: res.status, message: res.data } })
         return
       }
 
@@ -102,7 +102,7 @@ export default function HeroProfile() {
       APIErrorDispatch({ type: 'SET_SUCCESS', payload: { message: '修改成功。' } })
       return
     }
-    APIErrorDispatch({ type: 'SET_ERROR', payload: res.data })
+    APIErrorDispatch({ type: 'SET_ERROR', payload: { code: res.status, message: res.data } })
   }
 
   return (

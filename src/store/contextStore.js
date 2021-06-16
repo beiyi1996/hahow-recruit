@@ -9,7 +9,7 @@ export function APIErrorReducer(state, action) {
     case 'SET_SUCCESS':
       return { code: 200, message: action.payload?.message }
     case 'SET_ERROR':
-      return { code: action.payload.code, message: action.payload.message }
+      return { code: action.payload?.code, message: action.payload.message }
     default:
       return state
   }
