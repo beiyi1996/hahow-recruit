@@ -1,6 +1,8 @@
-# Hahow-recruit
+# Hahow recruit
 
-Hahow-recruit 為 Hahow 前端工程師面試題目。
+hahow-recruit 為 Hahow 前端工程師面試題目。
+
+[hahow recruit Github page](https://beiyi1996.github.io/hahow-recruit/) 線上版本
 
 
 
